@@ -1,40 +1,88 @@
 # Homebrew Automation Tools
 
-Automated maintenance scripts for Homebrew on macOS.
+Scripts for automated Homebrew maintenance on macOS.
 
 ## Overview
 
-This repository contains automation scripts to keep Homebrew updated and maintained on a regular schedule using macOS's built-in launchd service.
+A collection of scripts that automatically update and maintain Homebrew using macOS launchd.
 
 ## Features
 
-- **Weekly Updates**: Automatic Homebrew updates every Monday at 10:00 AM
-- **Package Upgrades**: Upgrades outdated packages automatically
-- **Log Management**: Automatic cleanup of old log files to prevent disk space issues
-- **Health Checks**: Runs `brew doctor` to identify potential issues
-- **Error Handling**: Comprehensive logging with error tracking
+- Daily updates at 09:00
+- Automatic package upgrades for outdated formulae
+- Weekly log cleanup to prevent storage issues
+- Health checks via brew doctor
+- Detailed logging with error tracking
 
 ## Scripts
 
 ### brew-update.sh
-Main update script that:
+Main update script:
 - Updates Homebrew formulae
 - Upgrades outdated packages
-- Cleans up old versions
+- Removes old versions
 - Runs diagnostic checks
-- Manages log rotation
+- Rotates logs
 
 ### brew-log-cleanup.sh
-Monthly cleanup script that:
-- Removes logs older than specified thresholds
-- Truncates oversized log files
-- Maintains a clean log directory
+Weekly cleanup script:
+- Removes old logs based on age thresholds
+- Truncates large log files
+- Keeps log directory organised
 
 ## Installation
 
-The scripts are automatically scheduled via LaunchAgents located in:
-- `~/Library/LaunchAgents/com.user.brew-update.plist`
-- `~/Library/LaunchAgents/com.user.brew-log-cleanup.plist`
+### Quick Installation
+
+1. Clone this repository or download the scripts
+2. Navigate to the homebrew-automation directory
+3. Run the installation script:
+
+```bash
+cd homebrew-automation
+./install-launch-agents.sh
+```
+
+This will:
+- Copy and configure the Launch Agent plist files to `~/Library/LaunchAgents/`
+- Set up the correct paths for your system
+- Load the agents to start automatic scheduling
+
+### Manual Installation
+
+If you prefer to install manually:
+
+1. Copy the plist files from `LaunchAgents/` to `~/Library/LaunchAgents/`:
+   ```bash
+   cp LaunchAgents/com.user.brew-update.plist ~/Library/LaunchAgents/
+   cp LaunchAgents/com.user.brew-log-cleanup.plist ~/Library/LaunchAgents/
+   ```
+
+2. Edit each plist file to replace placeholders:
+   - Replace `HOMEBREW_SCRIPTS_DIR` with the full path to your scripts directory
+   - Replace `USER_HOME_DIR` with your home directory path
+
+3. Load the agents:
+   ```bash
+   launchctl load ~/Library/LaunchAgents/com.user.brew-update.plist
+   launchctl load ~/Library/LaunchAgents/com.user.brew-log-cleanup.plist
+   ```
+
+## Uninstallation
+
+To remove the automation:
+
+```bash
+./uninstall-launch-agents.sh
+```
+
+Or manually:
+```bash
+launchctl unload ~/Library/LaunchAgents/com.user.brew-update.plist
+launchctl unload ~/Library/LaunchAgents/com.user.brew-log-cleanup.plist
+rm ~/Library/LaunchAgents/com.user.brew-update.plist
+rm ~/Library/LaunchAgents/com.user.brew-log-cleanup.plist
+```
 
 ## Logs
 
@@ -73,8 +121,8 @@ launchctl load ~/Library/LaunchAgents/com.user.brew-log-cleanup.plist
 
 ## Schedule
 
-- **Weekly Update**: Every Monday at 10:00 AM
-- **Monthly Cleanup**: 1st of each month at 10:30 AM
+- Daily Update: Every day at 09:00
+- Weekly Cleanup: Every Sunday at 02:00
 
 ## Requirements
 

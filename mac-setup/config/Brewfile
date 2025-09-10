@@ -1,0 +1,338 @@
+# MacSetup Brewfile
+# Declarative package management for Homebrew
+# Usage: brew bundle install --file=Brewfile
+
+# Taps
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/services"
+tap "hashicorp/tap"
+
+# ============================================
+# Essential CLI Tools
+# ============================================
+
+# Version Control
+brew "git"
+brew "gh"                   # GitHub CLI
+brew "git-lfs"             # Git Large File Storage
+brew "git-delta"           # Better git diffs
+
+# Core Utilities
+brew "coreutils"           # GNU core utilities
+brew "findutils"           # GNU find, xargs, locate
+brew "gnu-sed"             # GNU sed
+brew "gawk"                # GNU awk
+brew "grep"                # GNU grep
+brew "wget"
+brew "curl"
+brew "tree"
+brew "htop"
+brew "ncdu"                # NCurses Disk Usage
+brew "jq"                  # JSON processor
+brew "yq"                  # YAML processor
+
+# ============================================
+# Development Tools
+# ============================================
+
+# Languages & Runtimes
+brew "node"
+brew "python@3.12"
+brew "go"
+brew "rust"
+brew "ruby"
+brew "java"
+brew "kotlin"
+brew "swift"
+
+# Package Managers
+brew "yarn"
+brew "pnpm"
+brew "pipx"
+brew "poetry"              # Python dependency management
+
+# Build Tools
+brew "cmake"
+brew "make"
+brew "ninja"
+brew "bazel"
+brew "meson"
+
+# ============================================
+# Productivity Tools
+# ============================================
+
+# Modern CLI Tools
+brew "fzf"                 # Fuzzy finder
+brew "ripgrep"             # Fast grep
+brew "fd"                  # Fast find
+brew "bat"                 # Better cat
+brew "eza"                 # Better ls
+brew "zoxide"              # Smarter cd
+brew "tldr"                # Simplified man pages
+brew "tmux"                # Terminal multiplexer
+brew "neovim"              # Modern vim
+
+# Git Tools
+brew "lazygit"             # Terminal UI for git
+brew "git-flow"            # Git flow workflow
+brew "git-secrets"         # Prevent committing secrets
+
+# ============================================
+# Database Tools
+# ============================================
+
+brew "postgresql@16"
+brew "mysql"
+brew "redis"
+brew "sqlite"
+brew "mongodb-community"
+
+# Database Clients
+brew "pgcli"               # PostgreSQL CLI with auto-completion
+brew "mycli"               # MySQL CLI with auto-completion
+
+# ============================================
+# Container & Orchestration
+# ============================================
+
+brew "docker"
+brew "docker-compose"
+brew "docker-credential-helper"
+brew "kubectl"
+brew "helm"
+brew "kind"                # Kubernetes in Docker
+brew "minikube"
+brew "skaffold"
+brew "kustomize"
+
+# Container Tools
+brew "lazydocker"          # Terminal UI for Docker
+brew "dive"                # Docker image explorer
+brew "hadolint"            # Dockerfile linter
+
+# ============================================
+# Cloud Tools
+# ============================================
+
+# AWS
+brew "awscli"
+brew "aws-sam-cli"
+brew "aws-vault"           # AWS credential storage
+
+# Azure
+brew "azure-cli"
+
+# Google Cloud
+cask "google-cloud-sdk"
+
+# Multi-cloud
+brew "terraform"
+brew "terragrunt"
+brew "packer"
+brew "vault"
+brew "consul"
+brew "nomad"
+
+# ============================================
+# Security Tools
+# ============================================
+
+brew "gnupg"
+brew "pinentry-mac"        # GPG PIN entry
+brew "ssh-copy-id"
+brew "sops"                # Secrets management
+brew "age"                 # Modern encryption
+
+# Security Scanners
+brew "trivy"               # Container vulnerability scanner
+brew "grype"               # Vulnerability scanner
+brew "syft"                # SBOM generator
+
+# ============================================
+# Network Tools
+# ============================================
+
+brew "nmap"
+brew "telnet"
+brew "mtr"                 # Network diagnostic tool
+brew "iperf3"              # Network bandwidth testing
+brew "httpie"              # Modern HTTP client
+brew "websocat"            # WebSocket client
+
+# ============================================
+# Development Utilities
+# ============================================
+
+# API Development
+brew "insomnia"            # API client
+brew "grpcurl"             # gRPC client
+brew "protobuf"            # Protocol buffers
+
+# Code Quality
+brew "shellcheck"          # Shell script linter
+brew "shfmt"               # Shell script formatter
+brew "yamllint"            # YAML linter
+brew "jsonlint"            # JSON linter
+brew "eslint"              # JavaScript linter
+brew "prettier"            # Code formatter
+
+# Documentation
+brew "pandoc"              # Document converter
+brew "graphviz"            # Graph visualization
+brew "plantuml"            # UML diagrams
+
+# ============================================
+# macOS Specific Tools
+# ============================================
+
+brew "mas"                 # Mac App Store CLI
+brew "duti"                # Default app settings
+brew "trash"               # Move to trash
+brew "terminal-notifier"   # macOS notifications
+
+# ============================================
+# Fonts
+# ============================================
+
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+cask "font-cascadia-code"
+cask "font-source-code-pro"
+cask "font-inconsolata"
+cask "font-meslo-lg-nerd-font"
+
+# ============================================
+# GUI Applications - Development
+# ============================================
+
+# IDEs & Editors
+cask "visual-studio-code"
+cask "intellij-idea"
+cask "pycharm"
+cask "webstorm"
+cask "goland"
+cask "datagrip"
+cask "sublime-text"
+
+# Development Tools
+cask "docker"
+cask "orbstack"            # Lightweight Docker/K8s
+cask "postman"
+cask "insomnia"
+cask "tableplus"           # Database GUI
+cask "sequel-ace"          # MySQL/MariaDB GUI
+cask "redis-insight"       # Redis GUI
+
+# Version Control
+cask "github"              # GitHub Desktop
+cask "sourcetree"          # Git GUI
+cask "fork"                # Git client
+cask "gitup"               # Git GUI
+
+# ============================================
+# GUI Applications - Productivity
+# ============================================
+
+# Terminal Emulators
+cask "iterm2"
+cask "warp"
+cask "kitty"
+cask "alacritty"
+
+# Productivity
+cask "alfred"              # Launcher & productivity
+cask "raycast"             # Modern launcher
+cask "rectangle"           # Window management
+cask "alt-tab"             # Better app switcher
+cask "hiddenbar"           # Menu bar management
+cask "bartender"           # Menu bar organization
+
+# Note Taking & Documentation
+cask "notion"
+cask "obsidian"
+cask "typora"              # Markdown editor
+cask "marked"              # Markdown preview
+
+# Communication
+cask "slack"
+cask "discord"
+cask "zoom"
+cask "microsoft-teams"
+
+# ============================================
+# GUI Applications - Utilities
+# ============================================
+
+# System Utilities
+cask "appcleaner"          # Uninstall apps completely
+cask "coconutbattery"      # Battery health
+cask "disk-utility"
+cask "onyx"                # System maintenance
+cask "the-unarchiver"      # Archive utility
+
+# Security
+cask "1password"
+cask "1password-cli"
+cask "bitwarden"
+cask "authy"               # 2FA
+
+# Cloud Storage
+cask "dropbox"
+cask "google-drive"
+cask "onedrive"
+
+# Media
+cask "vlc"
+cask "iina"                # Modern media player
+cask "handbrake"           # Video transcoder
+cask "imageoptim"          # Image optimization
+
+# ============================================
+# Optional Tools (Profile: Designer)
+# ============================================
+
+# Design Tools (uncomment if needed)
+# cask "figma"
+# cask "sketch"
+# cask "adobe-creative-cloud"
+# cask "affinity-designer"
+# cask "affinity-photo"
+# cask "principle"
+# cask "framer"
+
+# ============================================
+# Optional Tools (Profile: Data Science)
+# ============================================
+
+# Data Science (uncomment if needed)
+# cask "rstudio"
+# cask "anaconda"
+# brew "jupyter"
+# brew "apache-spark"
+# brew "hadoop"
+
+# ============================================
+# Optional Tools (Profile: Media)
+# ============================================
+
+# Media Production (uncomment if needed)
+# cask "final-cut-pro"
+# cask "logic-pro"
+# cask "davinci-resolve"
+# cask "adobe-premiere-pro"
+# cask "adobe-after-effects"
+# cask "blender"
+
+# ============================================
+# Mac App Store Apps
+# ============================================
+
+mas "Xcode", id: 497799835
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator Pro", id: 1289583905
+mas "Amphetamine", id: 937984704
+mas "Magnet", id: 441258766
