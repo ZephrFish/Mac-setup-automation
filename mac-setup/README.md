@@ -9,13 +9,13 @@
 
 **Automated, secure, and comprehensive macOS development environment setup**
 
-[Quick Start](#-quick-start) • [Features](#-features) • [Installation](#-installation) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[Quick Start](#quick-start) • [Features](#features) • [Installation](#installation) • [Documentation](#documentation) • [Contributing](#contributing)
 
 </div>
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone and run
@@ -31,35 +31,35 @@ cd macsetup
 
 **That's it!** Your Mac will be configured with a complete development environment in minutes.
 
-## ✨ Features
+## Features
 
-### 🛡️ Security First
+### Security First
 - **Checksum Verification**: All downloads verified for integrity
 - **Touch ID for Sudo**: Biometric authentication for admin tasks
 - **1Password Integration**: Secure credential management
 - **Encrypted Secrets**: Sensitive data protection
 
-### 📦 Comprehensive Tools
+### Comprehensive Tools
 - **Development**: 15+ languages and frameworks
 - **Databases**: PostgreSQL, MySQL, MongoDB, Redis
 - **Containers**: Docker, Kubernetes, OrbStack
 - **Cloud**: AWS, Azure, GCP, Terraform
 - **Productivity**: 30+ CLI tools
 
-### ⚡ Performance Optimized
+### Performance Optimized
 - **Apple Silicon Native**: Optimized for M3/M4 processors
 - **SSD Optimization**: Extended drive lifespan
 - **System Tuning**: Developer-friendly settings
 - **Resource Management**: Efficient memory usage
 
-### 🎯 Smart Profiles
+### Smart Profiles
 - **Developer**: Full-stack development
 - **DevOps**: Infrastructure and cloud
 - **Data Scientist**: ML and data tools
 - **Designer**: Creative and frontend
 - **Media**: Production and editing
 
-## 📋 Installation
+## Installation
 
 ### Prerequisites
 - macOS 12.0 (Monterey) or later
@@ -69,25 +69,25 @@ cd macsetup
 
 ### Installation Methods
 
-#### 🎯 Quick Setup (Recommended)
+#### Quick Setup (Recommended)
 ```bash
 ./setup.sh quick
 ```
 Installs recommended tools with sensible defaults.
 
-#### 🛠️ Custom Setup
+#### Custom Setup
 ```bash
 ./setup.sh --profile devops --with-optional
 ```
 Choose specific profile and include optional tools.
 
-#### 🎨 Interactive Setup
+#### Interactive Setup
 ```bash
 ./setup.sh
 ```
 Menu-driven installation with full control.
 
-#### 🔍 Preview Mode
+#### Preview Mode
 ```bash
 ./setup.sh full --dry-run
 ```
@@ -116,7 +116,7 @@ See what would be installed without making changes.
 | `--with-optional` | Include optional packages |
 | `--backup` | Backup before changes |
 
-## 🗂️ What's Included
+## What's Included
 
 ### Development Environment
 
@@ -185,7 +185,7 @@ See what would be installed without making changes.
 
 </details>
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MacSetup/
@@ -212,16 +212,16 @@ MacSetup/
     └── configure-touchid-sudo.sh
 ```
 
-## 🔒 Security
+## Security
 
 ### Security Features
-- ✅ SHA256 checksum verification
-- ✅ Secure download with retry logic
-- ✅ Backup before modifications
-- ✅ Touch ID for sudo authentication
-- ✅ 1Password CLI integration
-- ✅ No hardcoded credentials
-- ✅ Audit logging
+- SHA256 checksum verification
+- Secure download with retry logic
+- Backup before modifications
+- Touch ID for sudo authentication
+- 1Password CLI integration
+- No hardcoded credentials
+- Audit logging
 
 ### Security Best Practices
 1. Review scripts before running
@@ -230,7 +230,7 @@ MacSetup/
 4. Regular security updates
 5. Use profiles for least privilege
 
-## 📊 Status Check
+## Status Check
 
 Run `./setup.sh status` to see:
 - Installed tools and versions
@@ -238,7 +238,7 @@ Run `./setup.sh status` to see:
 - Missing components
 - Security settings
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -288,7 +288,7 @@ sudo -v
 - Run with `--verbose` for details
 - Open an [issue](https://github.com/yourusername/macsetup/issues)
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -304,11 +304,11 @@ shellcheck *.sh lib/*.sh modules/*.sh
 shfmt -w *.sh
 ```
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with inspiration from:
 - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
@@ -316,7 +316,7 @@ Built with inspiration from:
 - [donnemartin/dev-setup](https://github.com/donnemartin/dev-setup)
 - [nikitavoloboev/my-mac-os](https://github.com/nikitavoloboev/my-mac-os)
 
-## 📈 Roadmap
+## Roadmap
 
 - [ ] GUI application for setup
 - [ ] Cloud backup/restore
@@ -325,13 +325,13 @@ Built with inspiration from:
 - [ ] Docker-based testing
 - [ ] CI/CD integration
 
-## 💬 Support
+## Support
 
 - **Documentation**: [Wiki](https://github.com/yourusername/macsetup/wiki)
 - **Issues**: [GitHub Issues](https://github.com/yourusername/macsetup/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/macsetup/discussions)
 
-## 📊 Version History
+## Version History
 
 ### v3.0.0 (Current)
 - Complete rewrite with enhanced security
@@ -357,8 +357,8 @@ Built with inspiration from:
 
 <div align="center">
 
-**Made with ❤️ for the macOS developer community**
+**Made with love for the macOS developer community**
 
-[⬆ Back to Top](#macsetup---comprehensive-macos-development-environment)
+[Back to Top](#macsetup---comprehensive-macos-development-environment)
 
 </div>

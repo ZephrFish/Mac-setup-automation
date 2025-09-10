@@ -3,7 +3,7 @@
 # Oh My Zsh External Plugins Installation Script
 # This script installs essential external plugins and tools for enhanced Zsh experience
 
-echo " Installing Oh My Zsh external plugins and tools..."
+echo "Installing Oh My Zsh external plugins and tools..."
 
 # Colors for output
 RED='\033[0;31m'
@@ -27,7 +27,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
     echo "Installing zsh-autosuggestions..."
     git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
 else
-    echo -e "${GREEN}✓${NC} zsh-autosuggestions already installed"
+    echo -e "${GREEN}[INSTALLED]${NC} zsh-autosuggestions already installed"
 fi
 
 # Install zsh-syntax-highlighting
@@ -35,7 +35,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
     echo "Installing zsh-syntax-highlighting..."
     git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 else
-    echo -e "${GREEN}✓${NC} zsh-syntax-highlighting already installed"
+    echo -e "${GREEN}[INSTALLED]${NC} zsh-syntax-highlighting already installed"
 fi
 
 # Install zsh-completions
@@ -43,7 +43,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-completions" ]; then
     echo "Installing zsh-completions..."
     git clone https://github.com/zsh-users/zsh-completions "$ZSH_CUSTOM/plugins/zsh-completions"
 else
-    echo -e "${GREEN}✓${NC} zsh-completions already installed"
+    echo -e "${GREEN}[INSTALLED]${NC} zsh-completions already installed"
 fi
 
 # Install zsh-history-substring-search
@@ -51,7 +51,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-history-substring-search" ]; then
     echo "Installing zsh-history-substring-search..."
     git clone https://github.com/zsh-users/zsh-history-substring-search "$ZSH_CUSTOM/plugins/zsh-history-substring-search"
 else
-    echo -e "${GREEN}✓${NC} zsh-history-substring-search already installed"
+    echo -e "${GREEN}[INSTALLED]${NC} zsh-history-substring-search already installed"
 fi
 
 echo -e "\n${YELLOW}Installing Homebrew packages...${NC}"
@@ -86,7 +86,7 @@ brew_packages=(
 echo "Installing Homebrew packages..."
 for package in "${brew_packages[@]}"; do
     if brew list --formula | grep -q "^${package}\$"; then
-        echo -e "${GREEN}✓${NC} $package already installed"
+        echo -e "${GREEN}[INSTALLED]${NC} $package already installed"
     else
         echo "Installing $package..."
         brew install "$package"
@@ -109,7 +109,7 @@ done
 
 # for package in "${dev_packages[@]}"; do
 #     if brew list --formula | grep -q "^${package}\$"; then
-#         echo -e "${GREEN}✓${NC} $package already installed"
+#         echo -e "${GREEN}[INSTALLED]${NC} $package already installed"
 #     else
 #         echo "Installing $package..."
 #         brew install "$package"
@@ -122,17 +122,17 @@ echo -e "\n${YELLOW}Configuring installed tools...${NC}"
 if command -v fzf &> /dev/null; then
     echo "Setting up fzf..."
     $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
-    echo -e "${GREEN}✓${NC} fzf configured"
+    echo -e "${GREEN}[CONFIGURED]${NC} fzf configured"
 fi
 
 # Initialize zoxide
 if command -v zoxide &> /dev/null; then
     echo "Setting up zoxide..."
     echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc.local
-    echo -e "${GREEN}✓${NC} zoxide configured"
+    echo -e "${GREEN}[CONFIGURED]${NC} zoxide configured"
 fi
 
-echo -e "\n${GREEN} Installation complete!${NC}"
+echo -e "\n${GREEN}Installation complete!${NC}"
 echo -e "\n${YELLOW}Next steps:${NC}"
 echo "1. Restart your terminal or run: source ~/.zshrc"
 echo "2. Configure Powerlevel10k if needed: p10k configure"
